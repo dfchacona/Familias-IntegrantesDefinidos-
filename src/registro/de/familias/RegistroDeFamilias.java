@@ -28,13 +28,40 @@ public class RegistroDeFamilias {
         eleccion= lectura.nextInt();
         switch (eleccion){
             case(1):
-            Familia f1= new Familia();
+            
+            System.out.println("Ingrese el apellido: ");
+            String apellido= lectura.next();
+            System.out.println("Ingrese el nombre del padre: ");
+            String nombre= lectura.next();
+            System.out.println("Ingrese la edad del padre: ");
+            int edad= lectura.nextInt();
+            Persona padre= new Persona(nombre, apellido,"Masculino", "Padre", edad);
+            System.out.println("Ingrese el nombre de la madre: ");
+            nombre= lectura.next();
+            System.out.println("Ingrese la edad de la madre: ");
+            edad= lectura.nextInt();
+            Persona madre= new Persona(nombre, apellido,"Femenino", "Madre", edad);
+            System.out.println("Ingrese el nombre del hijo: ");
+            nombre= lectura.next();
+            System.out.println("Ingrese la edad del hijo: ");
+            edad= lectura.nextInt();
+            System.out.println("Ingrese el genero del hijo");
+            String genero=lectura.next();
+            Persona hijo1= new Persona(nombre, apellido, genero, "Hijo", edad);
+            System.out.println("Ingrese el nombre del hijo: ");
+            nombre= lectura.next();
+            System.out.println("Ingrese la edad del hijo: ");
+            edad= lectura.nextInt();
+            System.out.println("Ingrese el genero del hijo");
+            genero=lectura.next();
+            Persona hijo2= new Persona(nombre, apellido, genero, "Hijo", edad);
+            Familia f1= new Familia(madre,padre,hijo1,hijo2, apellido);
             familias.put(f1.getApellido(), f1);
             break;
             
             case(2):
             System.out.println("Ingrese apellido que desea ubicar: ");
-            String apellido=lectura.next();
+            apellido=lectura.next();
             f1=familias.get(apellido);
             if(f1!=null){
             System.out.println("Padre: \nNombre: "+f1.getPadre().getNombre()+"\nEdad:"+f1.getPadre().getEdad());
@@ -51,7 +78,7 @@ public class RegistroDeFamilias {
             f1=familias.get(apellido);
             if(f1!=null){
             System.out.println("Ingrese nombre del integrante que desea ubicar: ");
-            String nombre=lectura.next();
+            nombre=lectura.next();
             if(f1.getPadre().getNombre().equals(nombre)){
             System.out.println("Integrante solicitado: \nNombre: "+f1.getPadre().getNombre()+"\nEdad:"+f1.getPadre().getEdad());
             System.out.println("Esposa: \nNombre: "+f1.getMadre().getNombre()+"\nEdad:"+f1.getMadre().getEdad());
