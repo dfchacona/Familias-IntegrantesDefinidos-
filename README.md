@@ -2,5 +2,5 @@
 
 AUTORES 
 
-Diego Fernando Chacón Arango \n
+Diego Fernando Chacón Arango ---
 Alejandro Sebastian Alejo Patarroyo 
